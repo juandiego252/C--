@@ -1,0 +1,4 @@
+MongoDB es una base de datos NoSQL orientada a documentos que apareció a mediados de la década de 2000.
+Se utiliza para almacenar volúmenes masivos de datos.
+A diferencia de una base de datos relacional SQL tradicional,
+MongoDB no se basa en tablas y columnas. Los datos se almacenan como colecciones y documentos.
