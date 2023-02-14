@@ -3,14 +3,16 @@
 #include <string>
 using namespace std;
 void escribir();
+void leer();
 int main()
 {
     escribir();
+    leer();
     return 0;
 }
 
 void escribir()
-{   
+{
     char respuesta;
     string nombre;
     string frases;
@@ -23,15 +25,21 @@ void escribir()
         cout << "Error al abrir el archivo" << endl;
     }
 
-    do
+    cout << "Ingrese una frase:" << endl;
+    getline(cin, frases);
+    archivo << frases << endl;
+}
+
+void leer()
+{
+    ifstream archivo;
+    string texto;
+    archivo.open("Deber.txt", ios ::in);
+
+    cout << "Lectura del archivo" << endl;
+    while (!archivo.eof())
     {
-        fflush(stdin);
-        cout << "Ingrese una frase:" << endl;
-        getline(cin, frases);
-        archivo << frases << endl;
-
-        cout << "Desea seguir escribiendo frases ? (S/n)" << endl;
-        cin >> respuesta;
-
-    } while (respuesta == 'S' || respuesta == 's');
+        getline(archivo, texto);
+        cout << texto << endl;
+    }
 }
